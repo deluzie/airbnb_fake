@@ -1,0 +1,12 @@
+<h1>Workshop#new goes here</h1>
+
+
+
+<%= simple_form_for(@workshop) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.input :availability %>
+  <%= f.input :category %>
+  <%= f.submit %>
+<% end %>
