@@ -10,6 +10,7 @@ class WorkshopsController < ApplicationController
   def create
     @workshop = Workshop.new(workshop_params)
     @workshop.user = current_user
+    raise
     if @workshop.save
       redirect_to root_path
     else
