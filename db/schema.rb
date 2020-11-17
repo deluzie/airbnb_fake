@@ -10,21 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_17_105834) do
+ActiveRecord::Schema.define(version: 2020_11_16_151643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.date "date"
+    t.date "check_in"
+    t.date "check_out"
     t.integer "price"
-    t.boolean "confirmed"
+    t.boolean "confirmed", default: false
     t.bigint "user_id", null: false
     t.bigint "workshop_id", null: false
-    t.bigint "review_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["review_id"], name: "index_bookings_on_review_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
     t.index ["workshop_id"], name: "index_bookings_on_workshop_id"
   end
@@ -46,7 +45,6 @@ ActiveRecord::Schema.define(version: 2020_11_17_105834) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -54,17 +52,17 @@ ActiveRecord::Schema.define(version: 2020_11_17_105834) do
   create_table "workshops", force: :cascade do |t|
     t.text "description"
     t.string "address"
+    t.boolean "availability", default: true
+    t.integer "price"
+    t.string "equipment"
     t.string "title"
     t.string "category"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "availability"
-    t.string "equipment"
     t.index ["user_id"], name: "index_workshops_on_user_id"
   end
 
-  add_foreign_key "bookings", "reviews"
   add_foreign_key "bookings", "users"
   add_foreign_key "bookings", "workshops"
   add_foreign_key "reviews", "workshops"
