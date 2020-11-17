@@ -1,0 +1,33 @@
+<body style="background-color: #C5CBE3">
+  <div>
+  <h1 class="text-center"> These are all the Workshops </h1>
+  </div>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <% @workshops.each do |workshop| %>
+        <div class="col-lg-6 col-md-4">
+          <div class="card mb-4 border border-dark">
+            <img class="card-img-top border border-dark" src="https://coworkingguide.de/wp-content/uploads/2018/05/WeWork-Berlin-Kudamm-Showroom.jpg" alt="Card image cap">
+            <div class='card-body'>
+             <h2> <strong> <%= workshop.title %> </strong></h2>
+             <p> <%= workshop.description %> </p>
+             <a href="/show" class="btn btn-primary"> Offer</a>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="footer" style="background-color: white">
+    <div class="try">
+      <a href="https://www.spotify.com/de/" class="footer-primary">
+        SPACIFY LI
+      </a>
+      <p> Spacify is the world leading platform to book your workshop spaces </p>
+    </div>
+  </div>
+</body>
+
+
+
