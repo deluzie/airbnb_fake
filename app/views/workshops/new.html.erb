@@ -1,12 +1,31 @@
-<h1>Workshop#new goes here</h1>
+<body style="background-color: #FFF4D3">
+  <main class="container-fluid">
 
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col col-md-1">
+        </div>
 
+        <div class="col-md-auto my-1 p-5 card bg-white rounded box-shadow border border-dark border-5" style="align-items: center">
+          <%= link_to image_tag('logo.png') %>
+          <h1 class="pb-4 mb-1">Create Workshop</h1>
+          <div class="media text-muted pt-3">
 
-<%= simple_form_for(@workshop) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :address %>
-  <%= f.input :description %>
-  <%= f.input :availability %>
-  <%= f.input :category %>
-  <%= f.submit %>
-<% end %>
+            <%= simple_form_for(@workshop) do |f| %>
+              <%= f.input :title %>
+              <%= f.input :address %>
+              <%= f.input :description %>
+              <%= f.input :availability %>
+              <%= f.input :category %>
+              <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+              <%= f.submit "Save", class: "btn btn-primary btn-lg btn-block" %>
+            <% end %>
+
+        </div>
+        <div class="col col-md-1">
+        </div>
+
+      </div>
+    </div>
+  </main>
+</body>
