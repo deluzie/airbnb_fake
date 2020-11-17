@@ -3,6 +3,10 @@ class WorkshopsController < ApplicationController
     @workshops = Workshop.all
   end
 
+  def show
+    @workshop = Workshop.find(params[:id])
+  end
+
   def new
     @workshop = Workshop.new
   end
@@ -20,6 +24,6 @@ class WorkshopsController < ApplicationController
   private
 
   def workshop_params
-    params.require(:workshop).permit(:title, :address, :description, :availability, :category)
+    params.require(:workshop).permit(:title, :address, :description, :availability, :eqipment, :category)
   end
 end
