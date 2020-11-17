@@ -1,4 +1,8 @@
 <body style="background-color: #FFF4D3;">
+  <h1>Workshop#show goes here</h1>
+  <% @workshop.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
   <div class="container container-workshop">
     <div class="card rounded card-workshop" style="width:1168px" id="container-workshop">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">

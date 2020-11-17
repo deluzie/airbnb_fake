@@ -24,6 +24,6 @@ class WorkshopsController < ApplicationController
   private
 
   def workshop_params
-    params.require(:workshop).permit(:title, :address, :description, :availability, :eqipment, :category)
+    params.require(:workshop).permit(:title, :address, :description, :availability, :category, :equipment, photos: [])
   end
 end
