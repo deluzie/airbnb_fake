@@ -11,6 +11,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "partials/form";
 
-// // simple_form helpers
-// @import "simple_form-bootstrap/simple_form-bootstrap";
+// JS
+@import "flatpickr/dist/flatpickr";
+

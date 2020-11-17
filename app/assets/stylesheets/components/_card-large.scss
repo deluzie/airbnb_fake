@@ -1,0 +1,34 @@
+.container-workshop {
+  padding-top: 90px;
+}
+
+.card-info {
+  padding: 40px;
+  width: 577px;
+}
+
+.card-workshop {
+  border: 5px solid black;
+
+    h1 {
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: 600;
+    }
+
+    h3 {
+      padding-top: 20px;
+      font-family: "Work Sans";
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 26px;
+    }
+}
+
+.card-image {
+  border-bottom: 5px solid black;
+}
