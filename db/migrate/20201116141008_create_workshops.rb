@@ -3,7 +3,9 @@ class CreateWorkshops < ActiveRecord::Migration[6.0]
     create_table :workshops do |t|
       t.text :description
       t.string :address
-      t.date :availability
+      t.boolean :availability, default: true
+      t.integer :price
+      t.string :equipment
       t.string :title
       t.string :category
       t.references :user, null: false, foreign_key: true
