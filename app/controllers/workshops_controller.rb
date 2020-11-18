@@ -17,7 +17,7 @@ class WorkshopsController < ApplicationController
     @workshop = Workshop.new(workshop_params)
     @workshop.user = current_user
     if @workshop.save
-      redirect_to root_path
+      redirect_to workshops_path
     else
       render :new
     end
