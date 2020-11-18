@@ -27,7 +27,7 @@ user = User.create(
     )
   workshop.user = user
 
-  file = URI.open('https://i.picsum.photos/id/993/200/300.jpg?hmac=wwmtancuL0E4SpM9dBnkL-0sXQCflrwn9mJZgo0GNKo')
+  file = URI.open('http://blog.travelshopa.com/wp-content/uploads/2014/06/Tyrwhitt-General-Company.jpg')
   workshop.photos.attach(io: file, filename: "nes_#{counter}.png", content_type: 'image/png')
 
   workshop.save!
