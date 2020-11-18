@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 
+Booking.delete_all
+
 Workshop.delete_all
 
 User.delete_all
