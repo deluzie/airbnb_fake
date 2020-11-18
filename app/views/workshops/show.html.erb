@@ -1,31 +1,27 @@
 <body style="background-color: #FFF4D3;">
   <h1>Workshop#show goes here</h1>
-  <% @workshop.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-  <div class="container container-workshop">
+    <%#= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
     <div class="card rounded card-workshop" style="width:1168px" id="container-workshop">
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active card-image">
-            <%= image_tag("textile_workshop.jpg", width:'1168', :crop=>'fill') %>
-          </div>
-          <div class="carousel-item card-image">
-            <%= image_tag("textile_workshop.jpg", width:'1168', :crop=>'fill') %>
-          </div>
-          <div class="carousel-item card-image">
-            <%= image_tag("textile_workshop.jpg", width:'1168', :crop=>'fill') %>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <% @workshop.photos.each_with_index do |photo, index| %>
+      <div class="carousel-item card-images <%= "active" if index==0 %> ">
+        <%= cl_image_tag photo.key, height: 300, width: 1168, crop: :fill %>
       </div>
+      <% end %>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <div class="container container-workshop">
+
       <div class="card-body">
         <div class="card-info">
           <h1><%= @workshop.title %></h1>
@@ -47,3 +43,5 @@
     </div>
   </div>
 </body>
+
+ <%= image_tag("textile_workshop.jpg", width:'1168', :crop=>'fill') %>
