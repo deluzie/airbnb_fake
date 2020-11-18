@@ -7,8 +7,10 @@
     <div class="row justify-content-center">
       <% @workshops.each do |workshop| %>
         <div class="col-lg-6 col-md-4">
-          <div class="card mb-2 border-dark">
-            <img class="card-img-top border border-dark" src="https://coworkingguide.de/wp-content/uploads/2018/05/WeWork-Berlin-Kudamm-Showroom.jpg" alt="Card image cap">
+          <div class="card mb-4 border border-dark">
+              <div>
+                <%= cl_image_tag workshop.photos[0].key, height: 300, width: 598, crop: :fill %>
+              </div>
             <div class='card-body'>
              <h2> <strong> <%= workshop.title %> </strong></h2>
              <p> <%= workshop.description %> </p>
@@ -20,8 +22,4 @@
     </div>
   </div>
 </body>
-
-
-
-
 
