@@ -5,6 +5,8 @@ class WorkshopsController < ApplicationController
 
   def show
     @workshop = Workshop.find(params[:id])
+    @booking = Booking.new
+    @booking.workshop = @workshop
   end
 
   def new

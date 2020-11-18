@@ -1,6 +1,9 @@
 <body style="background-color: #FFF4D3;">
-  <h1>Workshop#show goes here</h1>
-    <%#= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% @workshop.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+  <div class="container container-workshop">
+    <%= link_to "Return to search results", workshops_path %>
     <div class="card rounded card-workshop" style="width:1168px" id="container-workshop">
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
@@ -19,9 +22,7 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-
   <div class="container container-workshop">
-
       <div class="card-body">
         <div class="card-info">
           <h1><%= @workshop.title %></h1>
@@ -39,9 +40,10 @@
             </div>
           </div>
         </div>
+        <div class="form">
+          <%= render 'shared/form' %>
+        </div>
       </div>
     </div>
   </div>
 </body>
-
- <%= image_tag("textile_workshop.jpg", width:'1168', :crop=>'fill') %>
