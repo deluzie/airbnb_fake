@@ -10,11 +10,15 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.workshop = @workshop
     if @booking.save
-      redirect_to root_path
+      redirect_to bookings_path
       flash[:notice] = "Booking request was successful!"
     else
       render :new
     end
+  end
+
+  def index
+    @bookings = current_user.bookings
   end
 
   private
