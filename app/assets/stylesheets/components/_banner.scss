@@ -1,0 +1,77 @@
+
+body {
+  background: $background-blue;
+}
+
+.landing-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -16px;
+  width: 100vw;
+  height: 641px;
+  background: $background-yellow;
+
+  .landing-header {
+    display: flex;
+    justify-content: center;
+  }
+
+  h1.landing-header {
+    font-size: 80px;
+    line-height: 96px;
+    font-weight: 600;
+    color: #F13C20;
+  }
+
+  p.landing-header {
+    font-size: 24px;
+    line-height: 37px;
+    padding-top: 32px;
+  }
+}
+
+.bg-blue {
+  position: relative;
+
+  .img-banner {
+    background-image: url("jade-scarlato-ozznFZJo0Ms-unsplash.jpg");
+    background-size: cover;
+    margin-top: 195px;
+    margin-bottom: 83px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid black;
+    width: 956px;
+    height: 551px;
+    left: 242px;
+    top: 906px;
+    flex-flow: row-wrap;
+  }
+
+  h1 {
+    font-size: 32;
+    font-weight: 600;
+  }
+
+  .img-banner p {
+    font-size: 16;
+  }
+
+  .title-image {
+    position: relative;
+    color: white;
+  }
+
+  a {
+    font-size: 32;
+  }
+}
+
+
+
+
+
+

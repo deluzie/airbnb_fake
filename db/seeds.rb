@@ -5,11 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
 Workshop.delete_all
 
-user = User.find(1)
+User.delete_all
 
-10.times do
+user = User.create(
+  email: "luzie@luzie.com",
+  password: "testing",
+  )
+
+5.times do |counter|
+
   workshop = Workshop.new(
     title: "Cozy Workshop in Berlin",
     description: "Very large studio space with lots of equipment to work on all of your projects",
@@ -18,6 +26,10 @@ user = User.find(1)
     equipment: "Tables"
     )
   workshop.user = user
-  workshop.save
+
+  file = URI.open('https://i.picsum.photos/id/993/200/300.jpg?hmac=wwmtancuL0E4SpM9dBnkL-0sXQCflrwn9mJZgo0GNKo')
+  workshop.photos.attach(io: file, filename: "nes_#{counter}.png", content_type: 'image/png')
+
+  workshop.save!
 end
 
