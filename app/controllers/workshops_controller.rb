@@ -1,6 +1,15 @@
 class WorkshopsController < ApplicationController
   def index
-    @workshops = Workshop.all
+    if params[:query].present?
+      sql_query = " \
+        workshops.title @@ :query \
+        OR workshops.description @@ :query \
+        OR workshops.equipment @@ :query \
+        OR workshops.address @@ :query "
+      @workshops = Workshop.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @workshops = Workshop.all
+    end
   end
 
   def show
