@@ -4,6 +4,7 @@ class WorkshopsController < ApplicationController
       sql_query = " \
         workshops.title @@ :query \
         OR workshops.description @@ :query \
+        OR workshops.category @@ :query \
         OR workshops.equipment @@ :query \
         OR workshops.address @@ :query "
       @workshops = Workshop.where(sql_query, query: "%#{params[:query]}%")
