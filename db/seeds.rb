@@ -73,7 +73,7 @@ end
     )
   workshop.user = user
 
-  file = URI.open('https://lh3.googleusercontent.com/proxy/4vlSNGToPDAVTbQfGm_woSk5HwjRoEl2usVRkA4RZzr9Pw-wQnN6a5yd3DusZV84GAmU7ZosmwyIeUN_ZGdE85-F2geMwDArGjzu-i4JCK1vOzyFGt4THOr8KqcWnN1_bmIltcKmgA')
+  file = URI.open('https://s3-eu-central-1.amazonaws.com/dp-web-resources-wp/wp-content/uploads/2019/12/09151021/How-to-create-a-small-DIY-photo-studio-on-a-budget.-Step-by-step-setup.jpg')
   workshop.photos.attach(io: file, filename: "nes_#{counter}.png", content_type: 'image/png')
 
   workshop.save!
