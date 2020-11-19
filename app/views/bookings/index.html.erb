@@ -18,7 +18,7 @@
             <% end %>
             <h2><%= (booking.check_out - booking.check_in).to_i %> day(s)</h2>
             <h2>€<%= booking.price %>/day</h2>
-            <h2>€<%= (booking.price * (booking.check_out - booking.check_in)).to_i%> Total</h2>
+            <h2>€<%= (booking.price.to_i * (booking.check_out - booking.check_in)).to_i%> Total</h2>
           </div>
         </div>
       </div>
