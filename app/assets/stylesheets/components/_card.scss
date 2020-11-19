@@ -1,4 +1,5 @@
 .card {
+  color: black;
   margin: 0 auto;
   float: none;
   width: 500px;
@@ -13,6 +14,11 @@
 // .img-card {
 //   width: 30px;
 // }
+
+h2 {
+  padding-left: 10px;
+  padding-top: 10px;
+}
 
 .card-body {
   display: flex;

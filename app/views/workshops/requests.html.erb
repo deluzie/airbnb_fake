@@ -1,0 +1,66 @@
+<h1>My Booking Requests</h1>
+
+<div class="container mt-3">
+  <div class="container pending">
+    <h3>Pending Requests</h3>
+    <% @requests.each do |request| %>
+      <% if request.confirmed == false %>
+        <div class="card-product">
+          <%= cl_image_tag request.workshop.photos[0].key, height: 120, width: 120, crop: :fill %>
+          <div class="card-product-contents">
+            <div class="card-product-infos">
+              <h2> <%= request.workshop.title %> </h2>
+              <p>From <%= request.check_in %> until <%= request.check_out %></p>
+            </div>
+            <div class="card-product-buttons">
+
+              <%= simple_form_for(request) do |f| %>
+                  <%= f.input :confirmed, as: :hidden, input_html:{value:true}%>
+                 <%= button_tag type: 'submit', class: "card-product-button deny" do %>
+                  <i class="fas fa-times"></i>
+                  <p>Deny</p>
+                <% end %>
+              <% end %>
+
+<!--               <a href="#" class="card-product-button cancel">
+                <i class="fas fa-times"></i>
+                <p>Cancel</p>
+              </a> -->
+              <%= simple_form_for(request) do |f| %>
+                  <%= f.input :confirmed, as: :hidden, input_html:{value:true}%>
+                 <%= button_tag type: 'submit', class: "card-product-button confirm" do %>
+                  <i class="fas fa-check"></i>
+                  <p>Confirm</p>
+                <% end %>
+              <% end %>
+
+<!--               <a href="/requests/confirm" class="card-product-button confirm" id="confirm-button">
+                <i class="fas fa-check"></i>
+                <p>Confirm</p>
+              </a> -->
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="container confirmed mt-4">
+    <h3>Confimed Requests</h3>
+    <% @requests.each do |request| %>
+      <% if request.confirmed? %>
+        <div class="card-product">
+          <%= cl_image_tag request.workshop.photos[0].key, height: 120, width: 120, crop: :fill %>
+          <div class="card-product-contents">
+            <div class="card-product-infos">
+              <h2> <%= request.workshop.title %> </h2>
+              <p>From <%= request.check_in %> until <%= request.check_out %></p>
+            </div>
+            <p id="confirmed-message">Confirmed!</p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
