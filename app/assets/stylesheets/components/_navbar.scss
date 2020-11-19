@@ -1,6 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
+  box-shadow: inset 0px -4px 0px #000000;
   background: white;
+  height: 70px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -14,4 +16,19 @@
 .btn-login {
   background-color: #F13C20;
   color: white;
+}
+
+.content {
+  padding: 1px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.dropdown-border {
+  box-shadow: inset 0px -2px 0px #000000;
 }
