@@ -1,4 +1,3 @@
-
   <div>
   <h1 class="text-center"> These are all the Workshops </h1>
   </div>
@@ -8,22 +7,21 @@
       <% @workshops.each do |workshop| %>
         <div class="col-lg-6 col-md-4">
             <div class="card mb-4 index-border">
-                <div>
+                <div class="card-images">
                   <%= cl_image_tag workshop.photos[0].key, height: 300, width: 490, crop: :fill %>
                 </div>
+              <h2> <strong> <%= workshop.title %> </strong></h2>
               <div class='card-body'>
-               <h2> <strong> <%= workshop.title %> </strong></h2>
-               <p> <%= workshop.description.truncate(70) %> </p>
-              </div>
-            <div class="card-body">
-             <h2> <strong> <%= workshop.title %> </strong></h2>
-             <p> <%= link_to workshop.description, workshop_path(workshop), class: "stretched-link" %> </p>
+               <p> <%= link_to workshop.description.truncate(110), workshop_path(workshop), class: "stretched-link" %> </p>
               </div>
           </div>
         </div>
       <% end %>
     </div>
   </div>
+
+
+
 
 
 
