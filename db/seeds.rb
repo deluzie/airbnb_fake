@@ -7,17 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 
-Booking.delete_all
+Booking.destroy_all
 
-Workshop.delete_all
+Workshop.destroy_all
 
-User.delete_all
+User.destroy_all
 
 user = User.create(
   email: "luzie@luzie.com",
   password: "testing",
   )
-
 
 1.times do |counter|
 
@@ -28,7 +27,7 @@ user = User.create(
     address: "Karl-Marx Str 277 Berlin 1057",
     category: "Music",
     equipment: "Speakers, Computers, Mixers, Recording Gear, AMPs",
-    price: "20€"
+    price: "20"
     )
   workshop.user = user
 
@@ -47,7 +46,7 @@ end
     address: "Choriner Straße 33, Berlin 10433",
     category: "Woodwork",
     equipment: "Tables, Saw",
-    price: "15€"
+    price: "15"
     )
   workshop.user = user
 
@@ -69,11 +68,11 @@ end
     address: "Herzberg Straße 40-43, Berlin 12109",
     category: "Photostudio",
     equipment: "Lights, Greenscreen",
-    price: "10€",
+    price: "10",
     )
   workshop.user = user
 
-  file = URI.open('https://lh3.googleusercontent.com/proxy/4vlSNGToPDAVTbQfGm_woSk5HwjRoEl2usVRkA4RZzr9Pw-wQnN6a5yd3DusZV84GAmU7ZosmwyIeUN_ZGdE85-F2geMwDArGjzu-i4JCK1vOzyFGt4THOr8KqcWnN1_bmIltcKmgA')
+  file = URI.open('https://s3-eu-central-1.amazonaws.com/dp-web-resources-wp/wp-content/uploads/2019/12/09151021/How-to-create-a-small-DIY-photo-studio-on-a-budget.-Step-by-step-setup.jpg')
   workshop.photos.attach(io: file, filename: "nes_#{counter}.png", content_type: 'image/png')
 
   workshop.save!
@@ -89,7 +88,7 @@ As one of the four regular member, you'd have your personal work space, access t
     address: "Gehringstraße 53, Berlin 13088",
     category: "Ceramics",
     equipment: "Calipers,Trivet Frames,Clay and Color Shapers",
-    price: "7€",
+    price: "7",
     )
   workshop.user = user
 
@@ -108,7 +107,7 @@ end
     address: "Katharinenstraße 1, Berlin 10711",
     category: "Painting",
     equipment: "Tables, Brushes, Paint",
-    price: "13€",
+    price: "13",
     )
   workshop.user = user
 
@@ -127,7 +126,7 @@ Though you may know them as a great place to learn how to sew while meeting new 
     address: "Löwestraße 10, Berlin 10249",
     category: "Sewing ",
     equipment: "Tables, Garn, Sewing-Machien",
-    price: "10€",
+    price: "10",
     )
   workshop.user = user
 
