@@ -67,9 +67,26 @@
   position: relative;
 }
 
-.card-trip-infos .card-trip-user {
+.card-trip-infos .card-trip-confirmed {
   position: absolute;
   right: 16px;
-  top: -20px;
+  top: -50px;
   width: 40px;
+  padding-top: 9px;
+  .fa-check {
+    color: green;
+    font-size: 20px;
+  }
+}
+
+.card-trip-infos .card-trip-unconfirmed {
+  position: absolute;
+  right: 16px;
+  top: -50px;
+  width: 40px;
+  padding-top: 9px;
+  .fa-times {
+    color: red;
+    font-size: 20px;
+  }
 }
