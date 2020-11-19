@@ -1,0 +1,23 @@
+.confirmed_circle {
+  background-color: lightgray;
+  height: 39px;
+  width: 39px;
+  border-radius: 50%;
+  text-align: center;
+  justify-items: center;
+}
+
+.hide {
+  margin-right: 50px;
+  display: none;
+  font-size: 10px;
+  font-weight: bold;
+  font-shadow: 0px 0px 0px white;
+  color: white;
+}
+
+.confirmed_circle:hover{
+  .hide{
+    display: block;
+  }
+}

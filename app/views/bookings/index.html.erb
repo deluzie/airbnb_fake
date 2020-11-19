@@ -3,15 +3,23 @@
     <h1>My Bookings</h1>
     <% @bookings.each do |booking| %>
       <div class="card-trip">
-        <img src="https://images.unsplash.com/photo-1591285687558-632ddc5e026a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" />
+        <%= cl_image_tag booking.workshop.photos[0].key, height: 200, width: 1650, crop: :fill %>
         <div class="card-trip-infos">
           <div>
             <h2><%= booking.workshop.title %></h2>
             <p><%= booking.workshop.description %></p>
             <p>Dates: <%= booking.check_in %> until <%= booking.check_out %></p>
           </div>
-          <h2 class="card-trip-pricing">€75/day</h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          <div class="card-trip-pricing">
+            <% if booking.confirmed? %>
+              <%= render 'shared/confirmedcircle' %>
+            <% else %>
+              <%= render 'shared/unconfirmedcircle' %>
+            <% end %>
+            <h2><%= (booking.check_out - booking.check_in).to_i %> day(s)</h2>
+            <h2>€<%= booking.price %>/day</h2>
+            <h2>€<%= (booking.price * (booking.check_out - booking.check_in)).to_i%> Total</h2>
+          </div>
         </div>
       </div>
     <% end %>
