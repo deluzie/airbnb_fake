@@ -13,7 +13,7 @@
               </div>
             <div class='card-body'>
              <h2> <strong> <%= workshop.title %> </strong></h2>
-             <p> <%= workshop.description %> </p>
+             <p> <%= workshop.description.truncate(40) %> </p>
              <a> <%= link_to "Offer", workshop_path(workshop), class: "btn btn-primary" %></a>
             </div>
           </div>
