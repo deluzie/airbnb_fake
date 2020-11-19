@@ -13,12 +13,15 @@
               <h2> <strong> <%= workshop.title %> </strong></h2>
               <div class='card-body'>
                <p> <%= link_to workshop.description.truncate(110), workshop_path(workshop), class: "stretched-link" %> </p>
+               <h2> <strong> <%= workshop.price %>€</strong> </h2>
               </div>
+            </div>
           </div>
         </div>
       <% end %>
     </div>
   </div>
+
 
 
 
