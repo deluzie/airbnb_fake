@@ -13,14 +13,31 @@
               <p>From <%= request.check_in %> until <%= request.check_out %></p>
             </div>
             <div class="card-product-buttons">
-              <a href="#" class="card-product-button cancel">
+
+              <%= simple_form_for(request) do |f| %>
+                  <%= f.input :confirmed, as: :hidden, input_html:{value:true}%>
+                 <%= button_tag type: 'submit', class: "card-product-button deny" do %>
+                  <i class="fas fa-times"></i>
+                  <p>Deny</p>
+                <% end %>
+              <% end %>
+
+<!--               <a href="#" class="card-product-button cancel">
                 <i class="fas fa-times"></i>
                 <p>Cancel</p>
-              </a>
-              <a href="#" class="card-product-button confirm">
+              </a> -->
+              <%= simple_form_for(request) do |f| %>
+                  <%= f.input :confirmed, as: :hidden, input_html:{value:true}%>
+                 <%= button_tag type: 'submit', class: "card-product-button confirm" do %>
+                  <i class="fas fa-check"></i>
+                  <p>Confirm</p>
+                <% end %>
+              <% end %>
+
+<!--               <a href="/requests/confirm" class="card-product-button confirm" id="confirm-button">
                 <i class="fas fa-check"></i>
                 <p>Confirm</p>
-              </a>
+              </a> -->
             </div>
           </div>
         </div>

@@ -2,10 +2,10 @@
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   border: 5px solid black;
+  margin-bottom: 30px;
 }
 
 .card-product img {
@@ -47,8 +47,9 @@
 .card-product-buttons {
   display: flex;
   align-items: center;
-  a {
+  button {
     margin: 0px 6px;
+    text-align: center;
   }
 }
 
