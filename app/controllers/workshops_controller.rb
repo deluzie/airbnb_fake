@@ -32,6 +32,15 @@ class WorkshopsController < ApplicationController
     end
   end
 
+  def requests
+    @requests = []
+    current_user.workshops.each do |workshop|
+      workshop.bookings.each do |booking|
+        @requests.push(booking)
+      end
+    end
+  end
+
   private
 
   def workshop_params
