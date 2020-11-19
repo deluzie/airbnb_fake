@@ -1,4 +1,4 @@
-<body style="background-color: #C5CBE3">
+
   <div>
   <h1 class="text-center"> These are all the Workshops </h1>
   </div>
@@ -7,19 +7,24 @@
     <div class="row justify-content-center">
       <% @workshops.each do |workshop| %>
         <div class="col-lg-6 col-md-4">
-          <div class="card mb-4 index-border">
-              <div>
-                <%= cl_image_tag workshop.photos[0].key, height: 300, width: 490, crop: :fill %>
+          <%= link_to workshop_path(workshop), :action => 'go' do %>
+            <div class="card mb-4 index-border">
+                <div>
+                  <%= cl_image_tag workshop.photos[0].key, height: 300, width: 490, crop: :fill %>
+                </div>
+              <div class='card-body'>
+               <h2> <strong> <%= workshop.title %> </strong></h2>
+               <p> <%= workshop.description.truncate(70) %> </p>
               </div>
-            <div class='card-body'>
-             <h2> <strong> <%= workshop.title %> </strong></h2>
-             <p> <%= workshop.description.truncate(40) %> </p>
-             <a> <%= link_to "Offer", workshop_path(workshop), class: "btn btn-primary" %></a>
             </div>
-          </div>
+          <% end %>
         </div>
       <% end %>
     </div>
   </div>
-</body>
+
+
+
+
+
 

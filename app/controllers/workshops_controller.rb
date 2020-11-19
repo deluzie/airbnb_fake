@@ -8,7 +8,7 @@ class WorkshopsController < ApplicationController
         OR workshops.address @@ :query "
       @workshops = Workshop.where(sql_query, query: "%#{params[:query]}%")
     else
-      @workshops = Workshop.all
+      @workshops = Workshop.order("created_at DESC").all
     end
   end
 
@@ -38,3 +38,4 @@ class WorkshopsController < ApplicationController
     params.require(:workshop).permit(:title, :address, :description, :availability, :category, :equipment, photos: [])
   end
 end
+
