@@ -11,10 +11,9 @@
               <div>
                 <%= cl_image_tag workshop.photos[0].key, height: 300, width: 490, crop: :fill %>
               </div>
-            <div class='card-body'>
+            <div class="card-body">
              <h2> <strong> <%= workshop.title %> </strong></h2>
-             <p> <%= workshop.description.truncate(40) %> </p>
-             <a> <%= link_to "Offer", workshop_path(workshop), class: "btn btn-primary" %></a>
+             <p> <%= link_to workshop.description, workshop_path(workshop), class: "stretched-link" %> </p>
             </div>
           </div>
         </div>

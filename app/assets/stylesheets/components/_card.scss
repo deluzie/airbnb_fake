@@ -90,3 +90,12 @@
     font-size: 20px;
   }
 }
+
+.stretched-link {
+  text-decoration: !important none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+}
