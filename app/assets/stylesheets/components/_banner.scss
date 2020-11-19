@@ -25,7 +25,8 @@ body {
   }
 
   h1.landing-header {
-    font-size: 80px;
+    padding-top: 100px;
+    font-size: 75px;
     line-height: 96px;
     font-weight: 600;
     color: #F13C20;
@@ -35,6 +36,15 @@ body {
     font-size: 24px;
     line-height: 37px;
     padding-top: 32px;
+    padding-bottom: 64px;
+  }
+
+  .landing_review {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-right: 60px;
+    padding-bottom: 50px;
   }
 }
 
