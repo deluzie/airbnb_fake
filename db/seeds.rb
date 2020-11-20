@@ -122,7 +122,7 @@ end
 1.times do |counter|
 
   workshop = Workshop.new(
-    title: "Hugh Photo Studio ",
+    title: "Huge Photo Studio ",
     description: "Dear photographers, artists, creatives! Our photo studio equipped with several backgrounds, two flashlights, soft boxes, reflectors, professional photo printer for A2 is available for rent or co-use. There exists the possibility to combine with a desk space in a
     collective working area (from 325 €/month incl. 19% VAT). We are looking for photographers, videographers and photo artists to join our collective studio loft. The space is unique and located in a super interesting creative compound, well-connected with public transport and
     close to the Ringbahn, close to Prenzlauser Berg, Mitte, Friedrichshain.The space is very well equipped with a kitchen, own bathroom with shower (no living!), a separate big container for storage, all sorts of tools, tables, projector and a wide range of technical equipment. On the
@@ -192,7 +192,7 @@ user = User.create(
 
   workshop = Workshop.new(
     title: "Cozy Atelier",
-    description: "I offers various rooms for artists and creatives with a supportive rental price. The 140 individually used studios at AF range between 12 and 144 sqm. Shared pantry room are located on all floors. An interdisciplinary exchange with the other studio users can take place there or in the in-house KANTINE, or at the pop-up bar RAMPE – BAR & BARBECUE. If a larger project is pending, larger rooms in the house can be used temporarily. It is also possible to organize exhibitions and presentations independently.
+    description: "I offer various rooms for artists and creatives with a supportive rental price. The 140 individually used studios at AF range between 12 and 144 sqm. Shared pantry room are located on all floors. An interdisciplinary exchange with the other studio users can take place there or in the in-house KANTINE, or at the pop-up bar RAMPE – BAR & BARBECUE. If a larger project is pending, larger rooms in the house can be used temporarily. It is also possible to organize exhibitions and presentations independently.
     The work spaces can be reached by staircases, a passenger and a freight elevator. ",
     address: "Katharinenstraße 1, Berlin 10711",
     category: "Painting",

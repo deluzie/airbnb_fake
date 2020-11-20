@@ -23,20 +23,20 @@
       <div class="card-body">
         <div class="card-info">
           <h1><%= @workshop.title %></h1>
-          <h3><%= @workshop.category %></h3>
+          <h3><strong><%= @workshop.category %></strong></h3>
           <h3 class="card-subheader">Description</h3>
           <p><%= @workshop.description %></p>
           <h3 class="card-subheader">Equipment</h3>
           <p><%= @workshop.equipment %></p>
           <div class="reviews-container">
             <div class="review">
-              <h3 class="card-subheader">Reviews:</h3>
-              <p>"This was such an amazing workshop, I really loved spending three
+              <h3 class="card-subheader"></h3>
+              <p><strong>Santi S. says: </strong><br>"This was such an amazing workshop, I really loved spending three
               days here. The equipment is awesome and Peter always gives great tips
               on how to include different sounds into my set..."</p>
               <p>
                 <br>
-                "Just amazing, they had everything I needed, even a piano which is uncommen these days.
+                <strong>Sarah L. says: </strong><br>"Just amazing, they had everything I needed, even a piano which is uncommen these days.
                 I was able to create a killer tune."
               </p>
             </div>
