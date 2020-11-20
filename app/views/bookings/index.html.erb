@@ -1,6 +1,6 @@
 <body class="bookings" style="background-color: #C5CBE3" >
   <div class="container">
-    <h1>My Bookings</h1>
+    <h1>Bookings</h1>
     <% @bookings.each do |booking| %>
       <div class="card-trip">
         <%= cl_image_tag booking.workshop.photos[0].key, height: 200, width: 1650, crop: :fill %>
