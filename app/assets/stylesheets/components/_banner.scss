@@ -85,43 +85,6 @@ body {
   a {
     font-size: 32;
   }
-
-  .input-search input {
-    position: static;
-    width: 245px;
-    height: 41px;
-    padding: 12px;
-
-    background: #FFFFFF;
-    border: 1px solid #d7d7d7;
-    border-radius: 6px;
-    color: #BFBFBF;
-  }
-
-  input:focus {
-    outline-style: none;
-    border: 1px solid $primary-red;
-    color: black;
-  }
-
-  input:focus::placeholder {
-  color: transparent;
-  }
-
-  input:focus {
-    outline-style: none;
-    border: 1px solid $primary-red;
-    color: black;
-  }
-
-  form {
-  display: flex;
-  justify-content: space-between;
-  width: 364px;
-  padding: 8px 12px;
-  background: #F3F5F9;
-  border-radius: 6px;
-  }
 }
 
 
