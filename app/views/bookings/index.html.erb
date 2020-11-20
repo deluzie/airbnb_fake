@@ -5,10 +5,10 @@
       <div class="card-trip">
         <%= cl_image_tag booking.workshop.photos[0].key, height: 200, width: 1650, crop: :fill %>
         <div class="card-trip-infos">
-          <div>
+          <div class="card-trip-description">
             <h2><%= booking.workshop.title %></h2>
-            <p><%= booking.workshop.description %></p>
-            <p>Dates: <%= booking.check_in %> until <%= booking.check_out %></p>
+            <p><%= booking.workshop.description.truncate(375) %></p>
+            <p id="dates">Dates: <%= booking.check_in %> until <%= booking.check_out %></p>
           </div>
           <div class="card-trip-pricing">
             <% if booking.confirmed? %>
@@ -16,9 +16,9 @@
             <% else %>
               <%= render 'shared/unconfirmedcircle' %>
             <% end %>
-            <h2><%= (booking.check_out - booking.check_in).to_i %> day(s)</h2>
-            <h2>€<%= booking.price %>/day</h2>
-            <h2>€<%= (booking.price.to_i * (booking.check_out - booking.check_in)).to_i%> Total</h2>
+            <h2><%= pluralize (booking.check_out - booking.check_in).to_i , 'day'%></h2>
+            <h2>€<%= booking.workshop.price %>/day</h2>
+            <h2>€<%= (booking.workshop.price.to_i * (booking.check_out - booking.check_in)).to_i%> Total</h2>
           </div>
         </div>
       </div>
