@@ -101,6 +101,17 @@ body {
   input:focus {
     outline-style: none;
     border: 1px solid $primary-red;
+    color: black;
+  }
+
+  input:focus::placeholder {
+  color: transparent;
+  }
+
+  input:focus {
+    outline-style: none;
+    border: 1px solid $primary-red;
+    color: black;
   }
 
   form {

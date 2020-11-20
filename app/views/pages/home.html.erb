@@ -3,7 +3,7 @@
     <div class="landing-banner bg-yellow">
       <div class="container row">
         <div class="container justify-content-center">
-          <h1 class="landing-header col">the space for you projects</h1>
+          <h1 class="landing-header col">the space for your projects</h1>
           <p class="landing-header text-center">Spacify helps creatives build and test<br> products from start to finish.</p>
         </div>
         <div class="landing_review">
@@ -16,13 +16,8 @@
         <div class="img-banner">
           <div class="container text-center elements-center">
             <h1 class="title-image">Find a Workspace for your needs</h1>
-            <p class="title-image">2.123 Spaces available in your area</p>
-            <div style="display: inline">
-              <%= form_tag workshops_path, method: :get do %>
-              <div style="display: inline" class="input-search"><%= text_field_tag :query, params[:query], placeholder: "Find a workshop"%></div>
-              <%= submit_tag "Search", class: "btn btn-primary" %>
-              <% end %>
-            </div>
+            <p class="title-image">243 Spaces available in your area</p>
+            <%= render 'shared/searchform' %>
           </div>
         </div>
       </div>
