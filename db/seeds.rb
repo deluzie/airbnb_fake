@@ -160,24 +160,7 @@ As one of the four regular member, you'd have your personal work space, access t
   workshop.save!
 end
 
-1.times do |counter|
 
-  workshop = Workshop.new(
-    title: "Cozy Atelier",
-    description: "I offers various rooms for artists and creatives with a supportive rental price. The 140 individually used studios at AF range between 12 and 144 sqm. Shared pantry room are located on all floors. An interdisciplinary exchange with the other studio users can take place there or in the in-house KANTINE, or at the pop-up bar RAMPE – BAR & BARBECUE. If a larger project is pending, larger rooms in the house can be used temporarily. It is also possible to organize exhibitions and presentations independently.
-    The work spaces can be reached by staircases, a passenger and a freight elevator. ",
-    address: "Katharinenstraße 1, Berlin 10711",
-    category: "Painting",
-    equipment: "Tables, Brushes, Paint",
-    price: "13",
-    )
-  workshop.user = user
-
-  file = URI.open('https://fotos02.mallorcazeitung.es/2018/12/20/690x278/miro-mallorca.jpg')
-  workshop.photos.attach(io: file, filename: "nes_#{counter}.png", content_type: 'image/png')
-
-  workshop.save!
-end
 
 1.times do |counter|
 
@@ -198,4 +181,29 @@ Though you may know them as a great place to learn how to sew while meeting new 
   workshop.save!
 end
 
+
+
+user = User.create(
+  email: "peter@luzie.com",
+  password: "testing",
+  )
+
+1.times do |counter|
+
+  workshop = Workshop.new(
+    title: "Cozy Atelier",
+    description: "I offers various rooms for artists and creatives with a supportive rental price. The 140 individually used studios at AF range between 12 and 144 sqm. Shared pantry room are located on all floors. An interdisciplinary exchange with the other studio users can take place there or in the in-house KANTINE, or at the pop-up bar RAMPE – BAR & BARBECUE. If a larger project is pending, larger rooms in the house can be used temporarily. It is also possible to organize exhibitions and presentations independently.
+    The work spaces can be reached by staircases, a passenger and a freight elevator. ",
+    address: "Katharinenstraße 1, Berlin 10711",
+    category: "Painting",
+    equipment: "Tables, Brushes, Paint",
+    price: "13",
+    )
+  workshop.user = user
+
+  file = URI.open('https://fotos02.mallorcazeitung.es/2018/12/20/690x278/miro-mallorca.jpg')
+  workshop.photos.attach(io: file, filename: "nes_#{counter}.png", content_type: 'image/png')
+
+  workshop.save!
+end
 
