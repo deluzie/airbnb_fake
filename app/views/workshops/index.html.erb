@@ -1,5 +1,8 @@
   <div>
-  <h1 class="text-center"> These are all the Workshops </h1>
+    <div class="row justify-content-center bg-blue">
+      <%= render 'shared/searchform' %>
+    </div>
+  <h1 class="text-center prompt">We found <%= pluralize @workshops.count, "Workshop" %> based on your search:</h1>
   </div>
 
   <div class="container">
