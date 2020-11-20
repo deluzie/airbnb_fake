@@ -24,10 +24,29 @@ user = User.create(
     title: "Shared Music Studio",
     description: "I am offering a big shared music studio space located in Neukölln. We offer spaces for bands and musicians on a daily basis.
     Get a space in one of our 4 rooms to enjoy our exclusive concept :15h of use per week, flexible slots, private storage, full backline, self-access, homely vibes.",
-    address: "Karl-Marx Str 277 Berlin 1057",
+    address: "Karl-Marx Str 277, Berlin 10573",
     category: "Music",
-    equipment: "Speakers, Computers, Mixers, Recording Gear, AMPs",
-    price: "20"
+    equipment: "AMPs, Electric Piano, Computers, Mixers, Recording Gear, Speakers",
+    price: "20",
+    )
+  workshop.user = user
+
+  file = URI.open('https://www.bonedo.de/fileadmin/_processed_/c/4/csm_Regieraum_Abbey_Road_Institute__6cf1c5da38.jpg')
+  workshop.photos.attach(io: file, filename: "nes_#{counter}.png", content_type: 'image/png')
+
+  workshop.save!
+end
+
+
+1.times do |counter|
+
+  workshop = Workshop.new(
+    title: "Recording Studio for DJs",
+    description: "Our DJ practice room is kitted out with the very best industry standard equipment for live performance and recording DJ sets. Our set up includes 2 x CDJ Nexus, 2 x Technics 1210 vinyl turntables, a Allen & Heath PX5 mixer, 2 sets of booth speakers, a computer and more.",
+    address: "Zionskirchstraße 7, Berlin 10119 ",
+    category: "Music",
+    equipment: "AMPs, Computers, Mixers, Recording Gear, Speakers",
+    price: "18",
     )
   workshop.user = user
 
@@ -36,6 +55,49 @@ user = User.create(
 
   workshop.save!
 end
+
+
+
+1.times do |counter|
+
+  workshop = Workshop.new(
+    title: "Large Music Studio",
+    description: "My beautiful music room is up for rent. It is located in the heart of Hamburg, right at the Rothenbaumchaussee, close to the U1 and the Bus 109. We offer spaces for bands and musicians on a daily basis.
+    Get a space in my big music room  to enjoy my exclusive concept :15h of use per week, flexible slots, private storage, full backline, self-access, homely vibes.",
+    address: "Hallerstraße 5, Hamburg 20143",
+    category: "Music",
+    equipment: "Computers, Piano, Mixers, Recording Gear, AMPs, Speakers",
+    price: "17"
+    )
+  workshop.user = user
+
+  file = URI.open('https://dt7v1i9vyp3mf.cloudfront.net/styles/header/s3/imagelibrary/s/sf021701-2jgbizf_eG6tIsOADiCI11Jg9g5r4SnL.jpg')
+  workshop.photos.attach(io: file, filename: "nes_#{counter}.png", content_type: 'image/png')
+
+  workshop.save!
+end
+
+
+1.times do |counter|
+
+  workshop = Workshop.new(
+    title: "FFM Recording Studio",
+    description: "I am offering a nice space to record your next great hit. It is located in central Frankfurt. Get a space in my big music room  to enjoy my exclusive concept :15h of use per week, flexible slots, private storage, full backline, self-access, homely vibes.",
+    address: "Zionsplatz 5, Frankfurt 20143",
+    category: "Music",
+    equipment: "Recording Gear, Computers, Piano, Mixers, AMPs, Speakers",
+    price: "17"
+    )
+  workshop.user = user
+
+  file = URI.open('https://www.6amgroup.com/wp-content/uploads/2020/06/Skancke-studio.png')
+  workshop.photos.attach(io: file, filename: "nes_#{counter}.png", content_type: 'image/png')
+
+  workshop.save!
+end
+
+
+
 
 
 1.times do |counter|
@@ -124,7 +186,7 @@ end
     description: "The craft behind fashion design is something that is not easily acquired.  Understanding the aesthetics of fashion is one thing, possessing the know how to actually sit down and make the garment is quite another.
 Though you may know them as a great place to learn how to sew while meeting new people and just having a darn good time, ",
     address: "Löwestraße 10, Berlin 10249",
-    category: "Sewing ",
+    category: "Sewing",
     equipment: "Tables, Garn, Sewing-Machien",
     price: "10",
     )
